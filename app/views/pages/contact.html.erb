@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Contact</h1>
+
+  <%# This is hidden from html %>
+  <!-- er + tab -->
+  <%# Time.now %>
+  <%# this is showing in html %>
+  <!-- pe + tab -->
+  <%#= Time.now.strftime('%b %e, %l:%M %p') %>
+
+  <h3>Meet Our Team</h3>
+
+  <%# method => HTTP VERB %>
+  <%# action => path %>
+
+  <%# /contact?member=yann %>
+
+
+  <form action="/contact" method="get">
+    <input type="text" name='member' placeholder="Who are you looking for?" value='<%= params[:member] %>'>
+    <input type="submit" class='btn btn-primary'>
+  </form>
+
+  <ol>
+    <% @members.each do |member| %>
+      <li><%= member.capitalize %></li>
+    <% end %>
+  </ol>
+
+  <%# WE dont build a tags anymore %>
+  <%# <a href="/">Home</a> %>
+  <!-- lt + tab > -->
+  <%#= link_to "Text displayed in the browser", placetogo_path %>
+  <%= link_to '🏠', root_path %>
+</div>
